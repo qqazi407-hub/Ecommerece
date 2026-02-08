@@ -1,0 +1,481 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Product Detail Page</title>
+  <style>
+    /* ===== RESET ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }/* ===== LAYOUT ===== */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  gap: 24px;
+}
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.search {
+  flex: 1;
+  display: flex;
+}
+.search input {
+  flex: 1;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+.search select {
+  height: 40px;
+  border: 1px solid #d1d5db;
+  border-left: none;
+  padding: 0 10px;
+}
+.search button {
+  height: 40px;
+  padding: 0 18px;
+  border: none;
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+.icons {
+  display: flex;
+  gap: 20px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ===== NAV ===== */
+.nav {
+  background: #fff;
+  border-top: 1px solid #e6e6e6;
+}
+.nav ul {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  height: 48px;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb {
+  font-size: 13px;
+  color: #6b7280;
+  padding: 16px 0;
+}
+
+/* ===== PRODUCT SECTION ===== */
+.product {
+  background: #fff;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 420px 1fr 280px;
+  gap: 24px;
+  border-radius: 6px;
+}
+
+/* LEFT */
+.gallery {
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+}
+.thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.thumbs div {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #e5e7eb;
+  background: #f3f4f6;
+}
+
+/* CENTER */
+.details h1 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.stock {
+  color: #22c55e;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.com{
+  color: #d1d5db;
+}
+.rating {
+  font-size: 13px;
+  color: #f59e0b;
+  margin-bottom: 12px;
+}
+.prices {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  background:#f1b855c0 ;
+  padding:10px ;
+  font-size: 15px;
+  color:gray;
+  font-weight: 500;
+
+}
+.price-box{
+  margin-right: 25px;
+ 
+
+}
+.meta {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #374151;
+}
+
+/* RIGHT */
+.seller {
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+.sell{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.shipp{
+  display: flex;
+  flex-direction: row;
+ gap:20px ;
+ font-size: 16px;
+
+
+}
+
+.seller_btn{
+  margin-top: 12px;
+  width: 100%;
+  height: 40px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+
+}
+
+.seller_profile {
+  margin-top: 12px;
+  width: 100%;
+  height: 40px;
+  background: white;
+  color:#3b82f6 ;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  font-weight: 600;
+
+}
+
+/* ===== TABS ===== */
+.tabs {
+  background: #fff;
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 6px;
+}
+.tab-head {
+  display: flex;
+  gap: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+.tab-head div {
+  padding-bottom: 8px;
+  border-bottom: 2px solid transparent;
+}
+.tab-head .active {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+.specs {
+  width: 60%;
+  border: 1px solid #e0e5ec;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 16px;
+}
+.specs td {
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+}
+
+/* ===== SIDEBAR ===== */
+.suggest {
+  position: absolute;
+  right: calc((100% - 1200px) / 2);
+  top: 430px;
+  width: 260px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+  font-size: 13px;
+}
+
+/* ===== RELATED ===== */
+.related {
+  background: #fff;
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: 6px;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+.card {
+  /* border: 1px solid #e5e7eb; */
+  padding: 12px;
+  /* text-align: center; */
+  font-size: 16px;
+ 
+}
+
+/* ===== FOOTER ===== */
+
+
+
+.social-icons{
+    display:flex;
+  font-size:18px ;
+    gap:10px;
+    margin:10px;
+   
+    
+}
+.social-icons div{
+    width:30px;
+    height:28px;
+    background:#bbbaba;
+    border-radius:100%;
+    padding-top: 5px;
+    color:white ;
+    text-align: center;
+   
+    
+
+
+    
+}
+
+
+.foot{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+margin-left:10px ;
+
+
+}
+.foote{
+  /* margin-right: 10px; */
+  width:220px ;
+}
+
+footer {
+  margin-top: 40px;
+  background: #fff;
+  padding: 40px 0;
+  border-top: 1px solid #e5e7eb;
+  font-size: 13px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 24px;
+}
+
+  </style>
+</head>
+<body><header>
+  <div class="container topbar">
+    <div class="logo">   <img src="assets/assets/Layout/Brand/logo-colored.png" alt=""></div>
+    <div class="search">
+      <input placeholder="Search" />
+      <select><option>All category</option></select>
+      <button>Search</button>
+    </div>
+    <div class="icons">Profile · Message · Orders · Cart</div>
+  </div>
+  <div class="nav">
+    <div class="container">
+      <ul>
+        <li>All category</li>
+        <li>Hot offers</li>
+        <li>Gift boxes</li>
+        <li>Projects</li>
+        <li>Menu item</li>
+        <li>Help</li>
+      </ul>
+    </div>
+  </div>
+</header><main class="container">
+  <div class="breadcrumb">Home > Clothing > Men's wear > Summer clothing</div>  <section class="product">
+    <div class="gallery">
+      <div style="height:360px;"><img src="assets/assets/Layout/alibaba/Image/cloth/image 34.png" alt=""></div>
+      <div class="thumbs">
+        <div><img src="assets/assets/Layout/alibaba/Image/cloth/image 39.png" alt=""></div><div><img src="assets/assets/Layout/alibaba/Image/cloth/image 35.png" alt=""></div><div><img src="assets/assets/Layout/alibaba/Image/cloth/image 40.png" alt=""></div><div><img src="assets/assets/Layout/alibaba/Image/cloth/image 36.png" alt=""></div><div><img src="assets/assets/Layout/alibaba/Image/cloth/image 37.png" alt=""></div><div><img src="assets/assets/Layout/alibaba/Image/cloth/image 38.png" alt=""></div>
+      </div>
+    </div><div class="details">
+  <div class="stock">✔ In stock</div>
+  <h1>Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle</h1>
+  <div class="rating">★★★★★ 9.3 · <i class="	far fa-comment com"></i> 32 reviews · <i class=" fas fa-shopping-basket com"></i>154 sold</div>
+  <div class="prices">
+    <div class="price-box" "> <span style="color: red; font-weight: bolder;font-size: 25px;">$98.00</span><br><small>50–100 pcs</small></div><hr>
+    <div class="price-box" "><span style="color: black; font-weight: bolder;font-size: 25px;">$90.00</span><br><small>100–700 pcs</small></div><hr>
+    <div class="price-box"><span style="color:black; font-weight: bolder;font-size: 25px;">$78.00</span><br><small>700+ pcs</small></div>
+  </div>
+  <div class="meta">
+    <span style="color:gray ; font-weight: 600; margin-right: 100px;">Price:</span> Negotiable
+    <br>
+    <br><hr>
+    <span style="color:gray ; font-weight: 600; margin-right: 100px;">Type:</span> Classic shoes<br>
+    <span style="color:gray ; font-weight: 600; margin-right: 80px;">Material:</span>Plastic material<br>
+    <span style="color:gray ; font-weight: 600; margin-right: 90px;">Design:</span> Modern nice<br>
+    <br>
+    <hr>
+   <span style="color:gray ; font-weight: 600; margin-right: 30px;">Customization:</span>  Customized logo and
+    <span style="margin-left:160px ;">design custom packages</span>
+    <br>
+    <span style="color:gray ; font-weight: 600; margin-right: 70px;">Protection:</span>  Refund Policy<br>
+   <span style="color:gray ; font-weight: 600; margin-right: 70px;">Warranty:</span>  2 years full warranty
+    <br>
+    <hr>
+  </div>
+</div>
+
+<div class="seller">
+  <div class="sell">
+  <div>
+  <img src="assets/assets/Layout/alibaba/Image/imgR.jpg"  width="50px"> </div><div><span style="font-weight: 600; font-size: large;">Suplier <br></span>
+ <span style="font-weight: 600; font-size: large;"> Guanjoi Trading LLC</span></div>
+ </div>
+ <br><br><div class="shipp">
+ <div>
+  <img src="assets/assets/Layout1/Image/flags/DE@2x.png" alt=""> <br> <img src="assets/assets/Layout/Brand/verified_user.png" alt=""><br>  <img src="assets/assets/Layout/Brand/Vector1.png" alt=""> 
+  </div>
+  <div>Germany , Berlin
+    <br>
+    <br>Verified User
+    <br>
+    <br>Worldwide Shipping
+  </div>
+  </div>
+  <button class="seller_btn">Send inquiry</button>
+  <button class="seller_profile">Seller's Profile</button>
+<br>
+<br>
+<span style="color: #3b82f6; font-size: 16px; font-weight: 500; margin-top: 15px; margin-left: 70px;"> <i class="fa fa-heart"></i>  save for later</span>
+</div>
+
+
+  </section>  <section class="tabs">
+    <div class="tab-head">
+      <div class="active">Description</div>
+      <div>Reviews</div>
+      <div>Shipping</div>
+      <div>About seller</div>
+    </div>
+    <p style="font-size:13px;line-height:1.7;color:#374151;max-width:70%">
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod excepturi architecto inventore aliquid dolor molestiae? Recusandae, aliquam deleniti alias quos repellendus odio officia nemo animi minus placeat. Nulla, architecto voluptates. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam est illo aliquid, odio fugiat libero inventore accusantium magnam perferendis, culpa ex, esse corporis voluptatibus dolore porro vitae nobis veritatis vel.
+    </p><table class="specs">
+  <tr><td style="background-color: #e0e5ec;">Model</td><td>#8786867</td></tr>
+  <tr><td style="background-color: #e0e5ec;">Style</td><td>Classic style</td></tr>
+  <tr><td style="background-color: #e0e5ec;">Certificate</td><td>ISO-898921212</td></tr>
+  <tr><td style="background-color: #e0e5ec;">Size</td><td>34mm x 450mm x 19mm</td></tr>
+  <tr><td style="background-color:#e0e5ec;">Memory</td><td>36GB RAM</td></tr>
+</table>
+✔ Some great feature name here <br>
+✔ Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>
+✔ Duis aute irure dolor in reprehenderit. <br>
+✔  Some great feature name here <br>
+  </section>  <section class="related">
+    <h3 style="margin-bottom:16px">Related products</h3>
+    <div class="related-grid"> <div><img src="assets/assets/Layout/alibaba/Image/img (2).png" alt=""><br>Xiaomi Redmi 8<br>Original <br>$32.00–$40.00</div>
+      <div class="card"><img src="assets/assets/Layout/alibaba/Image/img (1).png" alt=""><br>Xiaomi Redmi 8<br> Original <br>$32.00–$40.00</div>
+      <div class="card"><img src="assets/assets/Layout/alibaba/Image/img.png" alt=""><br>Xiaomi Redmi 8<br> Original <br>$32.00–$40.00</div>
+      <div class="card"><img src="assets/assets/Layout/alibaba/Image/img (3).png" alt=""><br>Xiaomi Redmi 8<br> Original <br>$32.00–$40.00</div>
+      <div class="card"><img src="assets/assets/Layout/alibaba/Image/img (4).png" alt=""><br>Xiaomi Redmi 8<br>Original <br>$32.00–$40.00</div>
+      <div class="card"><img src="assets/assets/Layout/alibaba/Image/img (5).png" alt=""><br>Xiaomi Redmi 8<br>Original <br>$32.00–$40.00</div>
+    </div>
+   
+  </section>
+</main><footer>
+  <div class="container footer-grid">
+
+ <div class="brand-logo">
+                <div>
+                <!-- style="width:32px;height:32px;background:#2b6ef2;border-radius:6px;"> -->
+                     <img src="assets/assets/Layout/Brand/logo-colored.png" alt=""></div>
+                <!-- Brand -->
+            
+            <p>Best information about the company
+            goes here but now lorem ipsum is</p>
+
+            <div class="social-icons">
+                <div class="fa-brands  fa-facebook-f social"></div><div class="fab fa-twitter"></div><div class="fab fa-linkedin-in"></div><div class="fab fa-instagram"></div><div class="fab fa-youtube"></div>
+            </div>
+        </div>
+       
+    <div class="foot"> 
+         <div class="foote"><span style="font-weight:700 ;">About us</span>
+          <br><br>About us<br>Find store<br>Categories<br>Blogs</div>
+    <div class="foote"><span style="font-weight: 700;">Partnership</span>
+      <br><br>About us<br>Find store<br>Categories<br>Blogs</div>
+    <div class="foote"><span style="font-weight: 700;">Information</span>
+      <br><br>Help Center<br>Money Refund<br>Shipping<br>Contact us</div>
+    <div class="foote"><span style="font-weight: 700;">For User</span>
+      <br><br>Login<br>Register<br>Settings<br>My Orders</div>
+      <div>
+        <h4>Get app</h4>
+        <br>
+       <img src="assets/assets/Layout/Misc/market-button.png" alt=""> <br>
+        <img src="assets/assets/Layout/Misc/Group.png" alt="">
+    </div>
+  </div>
+</footer></body>
+</html>

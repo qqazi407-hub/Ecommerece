@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>Product Listing</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f4f6f8;color:#333}
+.container{width:1200px;margin:0 auto}
+a{text-decoration:none;color:inherit}/* HEADER */ header{background:#fff;border-bottom:1px solid #e5e7eb} .topbar{height:64px;display:flex;align-items:center;gap:24px} .logo{font-size:20px;font-weight:600;color:#3b82f6;display:flex;align-items:center;gap:8px} .search{flex:1;display:flex} .search input{flex:1;height:40px;border:1px solid #d1d5db;border-right:none;padding:0 12px;border-radius:4px 0 0 4px} .search select{height:40px;border:1px solid #d1d5db;border-left:none;padding:0 10px} .search button{height:40px;background:#3b82f6;color:#fff;border:none;padding:0 20px;border-radius:0 4px 4px 0} .icons{display:flex;gap:18px;font-size:13px;color:#6b7280}
+
+.nav{height:48px;display:flex;align-items:center;border-top:1px solid #e5e7eb} .nav ul{display:flex;gap:24px;list-style:none;font-size:14px}
+
+/* BREADCRUMB */ .breadcrumb{font-size:13px;color:#6b7280;padding:16px 0}
+
+/* MAIN LAYOUT */ .main{display:grid;grid-template-columns:260px 1fr;gap:24px}
+
+/* SIDEBAR */ .sidebar{background:#fff;border-radius:6px;padding:16px;font-size:13px} .sidebar h4{margin-bottom:12px;font-size:14px} .filter{margin-bottom:20px} .filter ul{list-style:none;line-height:1.9;color:#374151} .checkbox{display:flex;align-items:center;gap:8px} .range{margin-top:8px} .range input{width:100%} .apply{margin-top:8px;width:100%;height:32px;border:1px solid #3b82f6;background:#fff;color:#3b82f6;border-radius:4px}
+
+/* LIST AREA */ .list-area{background:white;border-radius:6px;padding:16px} .list-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-size:13px} .list-head .right{display:flex;align-items:center;gap:12px}
+
+/* PRODUCT CARD */ .card{display:grid;grid-template-columns:120px 1fr 40px;gap:16px;padding:16px 0;border-top:1px solid #e5e7eb} .card:first-child{border-top:none} .thumb{width:180px;height:180px;border-radius:6px;background-color: #fff;} .card h3{font-size:15px;margin-bottom:6px} .price{font-weight:600;margin:6px 0} .old{font-size:13px;color:#9ca3af;text-decoration:line-through;margin-left:6px} .rating{font-size:13px;color:#f59e0b;margin-bottom:6px} .meta{font-size:16px;color:#6b7280;margin-bottom:6px} .free{color:#22c55e;font-weight:500 ; font-size: 18px;} .details{font-size:16px;color:#3b82f6; font-weight: 500px;} .heart{width:32px;height:32px;border:1px solid #d1d5db;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#3b82f6}
+.thumb img{
+  width:140px ;
+  margin-right:55px ;
+}
+
+
+.ran{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ran input{
+  width: 80px;
+  text-align: right;
+  border-color: #d1d5db;
+  border-width: 1px;
+}
+/* PAGINATION */ .pagination{display:flex;justify-content:flex-end;gap:8px;margin-top:20px;font-size:13px} .page{padding:6px 10px;border:1px solid #d1d5db;border-radius:4px;background:#fff} .active{background:#3b82f6;color:#fff;border-color:#3b82f6}
+
+/* NEWSLETTER */ .news{margin:40px 0;background:#eef2f7;padding:32px;text-align:center;border-radius:6px} .news h3{margin-bottom:8px} .news input{height:40px;width:260px;border:1px solid #d1d5db;padding:0 12px;border-radius:4px 0 0 4px} .news button{height:40px;border:none;background:#3b82f6;color:#fff;padding:0 20px;border-radius:0 4px 4px 0}
+
+/* FOOTER */ footer{background:#fff;border-top:1px solid #e5e7eb;padding:40px 0;font-size:13px} .footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:24px} 
+.social-icons{
+    display:flex;
+  font-size:18px ;
+    gap:10px;
+    margin:10px;
+   
+    
+}
+.social-icons div{
+    width:30px;
+    height:28px;
+    background:#bbbaba;
+    border-radius:100%;
+    padding-top: 5px;
+    color:white ;
+    text-align: center;
+   
+    
+
+
+    
+}
+
+
+.foot{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+/* margin-left:10px ; */
+
+
+}
+.foote{
+  /* margin-right: 10px; */
+  width:200px ;
+}
+
+</style>
+
+</head>
+<body><header>
+  <div class="container topbar">
+    <div class="logo">  <img src="assets/assets/Layout/Brand/logo-colored.png" alt=""></div>
+    <div class="search">
+      <input placeholder="Search" />
+      <select><option>All category</option></select>
+      <button>Search</button>
+    </div>
+    <div class="icons">Profile · Message · Orders · Cart</div>
+  </div>
+  <div class="nav">
+    <div class="container">
+      <ul>
+        <li>All category</li><li>Hot offers</li><li>Gift boxes</li><li>Projects</li><li>Menu item</li><li>Help</li>
+      </ul>
+    </div>
+  </div>
+</header><main class="container">
+  <div class="breadcrumb">Home > Clothing > Men's wear > Summer clothing</div>  <div class="main">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="filter">
+        <h4>Category</h4>
+        <ul>
+          <li>Mobile accessory</li><li>Electronics</li><li>Smartphones</li><li>Modern tech</li><li style="color:#3b82f6">See all</li>
+        </ul>
+      </div>
+     
+      <hr>
+     
+      <div class="filter">
+        <h4>Brands</h4>
+        <div class="checkbox"><input type="checkbox"> Samsung</div>
+        <br>
+        <div class="checkbox"><input type="checkbox"> Apple</div><br>
+        <div class="checkbox"><input type="checkbox"> Huawei</div><br>
+        <div class="checkbox"><input type="checkbox"> Lenovo</div><br>
+        <div style="color:#3b82f6;margin-top:6px">See all</div><br>
+      </div>
+   
+      <hr>
+      
+  <div class="filter">
+ <h4 style="margin-top:20px;">Features</h4>
+
+    <label><input type="checkbox"> Metallic</label>
+    <br>
+    <br>
+    <label><input type="checkbox"> Plastic cover</label> <br><br>
+    <label><input type="checkbox"> 8GB Ram</label><br> <br>
+    <label><input type="checkbox"> Super power </label><br> <br>
+    <label><input type="checkbox"> Large Memory</label><br><br>
+    <a href="" style="color: #3b82f6; text-decoration: none; font-size: medium;">see all</a>
+</div>
+<hr>
+      <div class="filter">
+        <h4>Price range</h4>
+        <div class="range"><input type="range"></div>
+        <div class="ran">
+        <div>
+        Min <br>
+        
+      <input type="text">
+      </div>
+      <div>
+        Max
+        <br>
+       <input type="text">
+       </div>
+       </div>
+        <button class="apply">Apply</button>
+      </div>
+      <hr>
+      <br>
+      <h4>Condition</h4>
+ <label><input type="checkbox"> Any</label><br> <br>
+    <label><input type="checkbox">Refurbished</label><br><br>
+    <label><input type="checkbox"> Brand New</label><br><br>
+    <label><input type="checkbox"> Old items</label><br><br>
+ <br><hr>
+<br>
+    <h4>Ratings</h4>
+ <label><input type="checkbox"><span style="color: #f59e0b; font-size: 18px; margin-left: 5px;"> ★★★★★ </span></label><br>
+        <label><input type="checkbox"> <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">★★★★</span><span style="font-size: 18px; color: #6b7280;">★</span></label><br>
+    <label><input type="checkbox"> <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">★★★</span><span style="font-size: 18px; color: #6b7280;">★★ </span></label><br>
+    <label><input type="checkbox"><span style="color: #f59e0b; font-size: 18px;margin-left: 5px;"> ★★ </span> <span style="font-size: 18px; color: #6b7280;">★★★ </span></label><br>
+ 
+
+    </aside><!-- LIST -->
+<section class="list-area">
+  <div class="list-head">
+    <div>12,911 items in <strong>Mobile accessory</strong></div>
+    <div class="right">✔ Verified only | Featured</div>
+  </div>
+
+  <!-- CARD -->
+  <div class="card">
+    <div class="thumb"><img src="assets/assets/Image/tech/image 33.png" alt=""></div>
+    
+    <div>
+      <h3>Canon Camera EOS 2000, Black 10x zoom</h3>
+      <div class="price">$998.00 <span class="old">$1128.00</span></div>
+      <div class="rating"> <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">★★★★</span><span style="font-size: 18px; color: #6b7280;">★</span>
+        <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">7.5</span>
+      <span style="font-size: 18px; color: #6b7280;"> . 154 orders ·</span><span class="free"> Free Shipping</span></div>
+      <div class="meta">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+      <div class="details">View details</div>
+    </div>
+    <div class="heart">♡</div>
+    
+
+
+    <div class="thumb"><img src="assets/assets/Image/tech/image 23.png" alt=""></div>
+    <div>
+      <h3>Canon Camera EOS 2000, Black 10x zoom</h3>
+      <div class="price">$998.00 <span class="old">$1128.00</span></div>
+      <div class="rating">
+        
+        
+         <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">★★★★</span><span style="font-size: 18px; color: #6b7280;">★</span>
+        <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">7.5</span>
+      <span style="font-size: 18px; color: #6b7280;"> . 154 orders ·</span>
+       <span class="free">Free Shipping</span></div>
+      <div class="meta">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+      <div class="details">View details</div>
+    </div>
+    <div class="heart">♡</div>
+
+
+    <div class="thumb"><img src="assets/assets/Image/tech/image 32.png" alt=""></div>
+    <div>
+      <h3>Canon Camera EOS 2000, Black 10x zoom</h3>
+      <div class="price">$998.00 <span class="old">$1128.00</span></div>
+      <div class="rating"> <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">★★★★</span><span style="font-size: 18px; color: #6b7280;">★</span>
+        <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">7.5</span>
+      <span style="font-size: 18px; color: #6b7280;"> . 154 orders ·</span> <span class="free">Free Shipping</span></div>
+      <div class="meta">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+      <div class="details">View details</div>
+    </div>
+    <div class="heart">♡</div>
+
+
+    <div class="thumb"><img src="assets/assets/Image/tech/image 34.png" alt=""></div>
+    <div>
+      <h3>Canon Camera EOS 2000, Black 10x zoom</h3>
+      <div class="price">$998.00 <span class="old">$1128.00</span></div>
+      <div class="rating"> <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">★★★★</span><span style="font-size: 18px; color: #6b7280;">★</span>
+        <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">7.5</span>
+      <span style="font-size: 18px; color: #6b7280;"> . 154 orders ·</span>· <span class="free">Free Shipping</span></div>
+      <div class="meta">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+      <div class="details">View details</div>
+    </div>
+    <div class="heart">♡</div>
+
+
+    <div class="thumb"><img src="assets/assets/Image/tech/8.png" alt=""></div>
+    <div>
+      <h3>Canon Camera EOS 2000, Black 10x zoom</h3>
+      <div class="price">$998.00 <span class="old">$1128.00</span></div>
+      <div class="rating"> <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">★★★★</span><span style="font-size: 18px; color: #6b7280;">★</span>
+        <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">7.5</span>
+      <span style="font-size: 18px; color: #6b7280;"> . 154 orders ·</span> <span class="free">Free Shipping</span></div>
+      <div class="meta">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+      <div class="details">View details</div>
+    </div>
+    <div class="heart">♡</div>
+
+    <div class="thumb"><img src="assets/assets/Image/tech/image 86.png" alt=""></div>
+    <div>
+      <h3>Canon Camera EOS 2000, Black 10x zoom</h3>
+      <div class="price">$998.00 <span class="old">$1128.00</span></div>
+      <div class="rating"> <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">★★★★</span><span style="font-size: 18px; color: #6b7280;">★</span>
+        <span style="color: #f59e0b; font-size: 18px;margin-left: 5px;">7.5</span>
+      <span style="font-size: 18px; color: #6b7280;"> . 154 orders ·</span> <span class="free">Free Shipping</span></div>
+      <div class="meta">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+      <div class="details">View details</div>
+    </div>
+    <div class="heart">♡</div>
+  </div>
+  
+
+  <!-- DUPLICATE CARDS AS NEEDED -->
+
+  <div class="pagination">
+    <div class="page">‹</div>
+    <div class="page active">1</div>
+    <div class="page">2</div>
+    <div class="page">3</div>
+    <div class="page">›</div>
+  </div>
+</section>
+
+  </div>  <div class="news">
+    <h3>Subscribe on our newsletter</h3>
+    <p>Get daily news on upcoming offers from many suppliers</p><br>
+    <input placeholder="Email" /><button>Subscribe</button>
+  </div>
+</main><footer>
+  <div class="container footer-grid">
+
+ <div class="brand-logo">
+                <div>
+                <!-- style="width:32px;height:32px;background:#2b6ef2;border-radius:6px;"> -->
+                     <img src="assets/assets/Layout/Brand/logo-colored.png" alt=""></div>
+                <!-- Brand -->
+            
+            <p>Best information about the company
+            goes here but now lorem ipsum is</p>
+
+            <div class="social-icons">
+                <div class="fa-brands  fa-facebook-f social"></div><div class="fab fa-twitter"></div><div class="fab fa-linkedin-in"></div><div class="fab fa-instagram"></div><div class="fab fa-youtube"></div>
+            </div>
+        </div>
+       
+    <div class="foot"> 
+         <div class="foote"><span style="font-weight:700 ;">About us</span>
+          <br><br>About us<br>Find store<br>Categories<br>Blogs</div>
+    <div class="foote"><span style="font-weight: 700;">Partnership</span>
+      <br><br>About us<br>Find store<br>Categories<br>Blogs</div>
+    <div class="foote"><span style="font-weight: 700;">Information</span>
+      <br><br>Help Center<br>Money Refund<br>Shipping<br>Contact us</div>
+    <div class="foote"><span style="font-weight: 700;">For User</span>
+      <br><br>Login<br>Register<br>Settings<br>My Orders</div>
+      <div>
+        <h4>Get app</h4>
+        <br>
+       <img src="assets/assets/Layout/Misc/market-button.png" alt=""> <br>
+        <img src="assets/assets/Layout/Misc/Group.png" alt="">
+    </div>
+  </div>
+
+
+    <!-- <div>Brand<br><br>Best information about the company goes here</div>
+    <div>About<br>About us<br>Find store<br>Categories<br>Blogs</div>
+    <div>Partnership<br>About us<br>Find store<br>Categories<br>Blogs</div>
+    <div>Information<br>Help Center<br>Money Refund<br>Shipping<br>Contact us</div>
+    <div>For users<br>Login<br>Register<br>Settings<br>My Orders</div>
+  </div> -->
+</footer></body>
+</html>

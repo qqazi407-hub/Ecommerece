@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<title>My Cart</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f4f6f8;color:#333}
+.container{width:1200px;margin:0 auto}
+a{text-decoration:none;color:inherit}/* HEADER */ header{background:#fff;border-bottom:1px solid #e5e7eb} .topbar{height:64px;display:flex;align-items:center;justify-content:space-between} .logo{font-size:20px;font-weight:600;color:#3b82f6;display:flex;align-items:center;gap:8px} .icons{display:flex;gap:18px;font-size:13px;color:#6b7280}
+
+/* PAGE */ .page{padding:32px 0} .title{font-size:20px;font-weight:600;margin-bottom:20px} .layout{display:grid;grid-template-columns:1fr 320px;gap:24px}
+
+/* CART LIST */ .cart-box{background:#fff;border-radius:6px;padding:16px} .cart-item{display:grid;grid-template-columns:80px 1fr 140px;gap:16px;padding:16px 0;border-bottom:1px solid #e5e7eb} .cart-item:last-child{border-bottom:none} .thumb{width:100px;height:100px;;border-radius:6px} .thumb img{
+  width: 80px;
+} .cart-item h4{font-size:14px;margin-bottom:6px} .meta{font-size:13px;color:#6b7280;line-height:1.6} .actions{margin-top:8px;font-size:15px; font-weight: 600;} .actions button{
+  background: white;
+  padding:8px ;
+  border-radius: 5px;
+  border: 1px solid rgb(185, 185, 209);
+} .actions span{margin-right:12px;color:#3b82f6;cursor:pointer} .price{text-align:right;font-weight:600;margin-bottom:8px} .qty{width:70px;height:32px;border:1px solid #d1d5db;border-radius:4px} .cart-footer{display:flex;justify-content:space-between;margin-top:16px} .btn{height:36px;padding:0 16px;border-radius:6px;border:none;font-size:13px;cursor:pointer} .back{background:#3b82f6;color:#fff} .remove-all{background:#fff;border:1px solid #d1d5db;color:#3b82f6}
+
+/* SUMMARY */ .summary{background:#fff;border-radius:6px;padding:16px;font-size:13px} .coupon{display:flex;gap:8px;margin-bottom:16px} .coupon input{flex:1;height:36px;border:1px solid #d1d5db;border-radius:4px;padding:0 10px} .coupon button{height:36px;background:#fff;border:1px solid #3b82f6;color:#3b82f6;border-radius:4px;padding:0 14px} .row{display:flex;justify-content:space-between;margin-bottom:8px} .total{font-size:18px;font-weight:600;margin:12px 0} .checkout{width:100%;height:44px;background:#22c55e;color:#fff;border:none;border-radius:6px;font-size:15px} .payments{margin-top:12px;font-size:12px;color:#6b7280;  display: flex; justify-content: space-between;}
+
+/* INFO STRIP */ .info{display:flex;gap:32px;justify-content:center;margin:32px 0;font-size:13px;color:#6b7280} .info div{display:flex;align-items:center;gap:8px}
+
+/* SAVED */ .saved{background:#fff;border-radius:6px;padding:16px; text-align: left;} .saved-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px} .saved-card{border:1px solid #e5e7eb;border-radius:6px;padding:12px;font-size:13px;text-align:center} .saved-img{height:200px;border-radius:6px;margin-bottom:8px} .move{color:#3b82f6;font-size:13px; text-align: right;}
+.saved-img img{
+  width:200px ;
+}
+.saved-card{
+  text-align: left;
+}
+.saved-card h4{
+  text-align: left;
+}
+.saved-card button{
+  background: white;
+  color: #3b82f6;
+  padding:8px ;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+/* BANNER */ .banner{margin:32px 0;background:#2563eb;color:#fff;border-radius:6px;padding:32px;display:flex;justify-content:space-between;align-items:center} .banner button{background:#f59e0b;border:none;color:#fff;padding:10px 16px;border-radius:6px}
+
+/* FOOTER */ footer{background:#fff;border-top:1px solid #e5e7eb;padding:40px 0;font-size:13px} .footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:24px} 
+
+.social-icons{
+    display:flex;
+  font-size:18px ;
+    gap:10px;
+    margin:10px;
+   
+    
+}
+.social-icons div{
+    width:30px;
+    height:28px;
+    background:#bbbaba;
+    border-radius:100%;
+    padding-top: 5px;
+    color:white ;
+    text-align: center;
+   
+    
+
+
+    
+}
+</style>
+
+</head>
+<body><header>
+  <div class="container topbar">
+    <div class="logo">  <img src="assets/assets/Layout/Brand/logo-colored.png" alt=""></div>
+    <div class="icons">Profile · Message · Orders · My cart</div>
+  </div>
+</header><main class="container page">
+  <div class="title">My cart (3)</div>  <div class="layout">
+    <!-- CART -->
+    <section class="cart-box">
+      <div class="cart-item">
+        <div class="thumb"> <img src="assets/assets/Layout/alibaba/Image/cloth/Bitmap.png" alt=""></div>
+        <div>
+          <h4>T-shirts with multiple colors, for men and lady</h4>
+          <div class="meta">Size: medium, Color: blue, Material: Plastic<br>Seller: Artel Market</div>
+          <div class="actions"><button><span style="color:#ef4444">Remove</span> </button> <button><span>Save for later</span></button></div>
+        </div>
+        <div>
+          <div class="price">$78.99</div>
+          <select class="qty"><option>Qty: 9</option></select>
+        </div>
+      </div><div class="cart-item">
+    <div class="thumb"><img src="assets/assets/Layout/alibaba/Image/cloth/image 26.png" alt=""></div>
+    <div>
+      <h4>T-shirts with multiple colors, for men and lady</h4>
+      <div class="meta">Size: medium, Color: blue, Material: Plastic<br>Seller: Best factory LLC</div>
+      <div class="actions"><button><span style="color:#ef4444">Remove</span> </button> <button><span>Save for later</span></button></div>
+    </div>
+    <div>
+      <div class="price">$39.00</div>
+      <select class="qty"><option>Qty: 3</option></select>
+    </div>
+  </div>
+
+  <div class="cart-item">
+    <div class="thumb"><img src="assets/assets/Image/interior/6.png" alt=""></div>
+    <div>
+      <h4>T-shirts with multiple colors, for men and lady</h4>
+      <div class="meta">Size: medium, Color: blue, Material: Plastic<br>Seller: Artel Market</div>
+       <div class="actions"><button><span style="color:#ef4444">Remove</span> </button> <button><span>Save for later</span></button></div>
+    </div>
+    <div>
+      <div class="price">$170.50</div>
+      <select class="qty"><option>Qty: 1</option></select>
+    </div>
+  </div>
+
+  <div class="cart-footer">
+    <button class="btn back">← Back to shop</button>
+    <button class="btn remove-all">Remove all</button>
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<aside class="summary">
+  Have a coupon?
+  <br>
+  <div class="coupon">
+   <br>
+    <input placeholder="Add coupon" />
+    <button>Apply</button>
+  </div>
+  <div class="row"><span style="font-size: 16px; font-weight: 500;">Subtotal:</span><span style="font-size: 16px; font-weight: 600;">$1403.97</span></div>
+  <div class="row"><span style="font-size:16px ; font-weight: 500;">Discount:</span><span style="color:#ef4444; font-size: 16px; font-weight: 600;">-$60.00</span></div>
+  <div class="row"><span style="font-size: 16px; font-weight: 500;">Tax:</span><span style="color:#22c55e; font-size: 16px; font-weight: 600;">+$14.00</span></div>
+  <div class="total row"><span>Total:</span><span style="font-size: 18px;">$1357.97</span></div>
+  <button class="checkout">Checkout</button>
+  <div class="payments"><img src="assets/assets/Layout/Misc/56.png" alt=""> <img src="assets/assets/Layout/Misc/paym.png" alt=""> <img src="assets/assets/Layout/Misc/pay.png" alt=""> <img src="assets/assets/Layout/Misc/visa.png" alt=""> <img src="assets/assets/Layout/Misc/payment.png " alt=""></div>
+</aside>
+
+  </div>  <div class="info">
+    <div><img src="assets/assets/Layout/Brand/icon.png" alt=""></div><div>Secure Payment<br>
+    Have You ever finally just </div>
+    <div> <img src="assets/assets/Layout/Brand/icon (1).png" alt=""></div><div>  Customer support
+   <br>
+    Have You ever finally just
+    </div>
+    <div> <img src="assets/assets/Layout/Brand/icon (2).png" alt=""></div> <div> Free delivery
+      <br>
+    Have You ever finally just
+    </div>
+  </div>  <section class="saved">
+    <h3>Saved for later</h3>
+    <div class="saved-grid">
+      <div class="saved-card"><div class="saved-img"> <img src="assets/assets/Image/tech/img (6).png" alt=""></div><h4>$99.50</h4><br>GoPro HERO6 4K Action<br> Camera-Black <br><br> <button><div class="move"><i class="fa fa-cart-shopping"></i>  Move to cart</div></button></div>
+      <div class="saved-card"><div class="saved-img"><img src="assets/assets/Image/tech/img (7).png" alt=""></div><h4>$99.50</h4><br>GoPro HERO6 4K Action <br> Camera-Black <br>  <br><button><div class="move"><i class="fa fa-cart-shopping"></i>  Move to cart</div></button></div>
+      <div class="saved-card"><div class="saved-img"><img src="assets/assets/Image/tech/img (8).png" alt=""></div><h4>$99.50</h4><br>GoPro HERO6 4K Action<br> Camera-Black <br> <br><button><div class="move"><i class="fa fa-cart-shopping"></i> Move to cart</div></button></div>
+      <div class="saved-card"><div class="saved-img"><img src="assets/assets/Image/tech/img (9).png" alt=""></div><h4>$99.50</h4>GoPro HERO6 4K Action<br> 
+      Camera-Black <br> <br>
+      <button><div class="move"><i class="fa fa-cart-shopping"></i> Move to cart</div></button></div>
+    </div>
+  </section>  <div class="banner">
+    <div>
+      <h3>Super discount on more than 100 USD</h3>
+      <p>Have you ever finally just write dummy info</p>
+    </div>
+    <button>Shop now</button>
+  </div>
+</main><footer>
+  <div class="container footer-grid">
+
+
+   <div class="brand-logo">
+                <div>
+                <!-- style="width:32px;height:32px;background:#2b6ef2;border-radius:6px;"> -->
+                     <img src="assets/assets/Layout/Brand/logo-colored.png" alt=""></div>
+                <!-- Brand -->
+            
+            <p>Best information about the company<br>
+            goes here but now lorem ipsum is</p>
+
+            <div class="social-icons">
+                <div class="fa-brands  fa-facebook-f social"></div><div class="fab fa-twitter"></div><div class="fab fa-linkedin-in"></div><div class="fab fa-instagram"></div><div class="fab fa-youtube"></div>
+            </div>
+        </div>
+       
+    <div>
+        <h4>About</h4>
+        About us<br>Find store<br>Categories <br>Blogs
+    </div>
+     
+    <div>
+        <h4>Information</h4>
+        Help center<br>Money refund<br>Shipping
+    </div>
+    <div>
+        <h4>For users</h4>
+        Login<br>Register<br>Settings
+    </div>
+    <div>
+        <h4>Get app</h4>
+       <img src="assets/assets/Layout/Misc/market-button.png" alt=""> <br>
+        <img src="assets/assets/Layout/Misc/Group.png" alt="">
+    </div>
+</div>
+
+  
+</footer></body>
+</html>

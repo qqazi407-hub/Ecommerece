@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ecommerce UI</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body{
+    /* background:#f6f9fc; */
+}
+
+/* TOP HEADER */
+.top-header{
+    background:#fff;
+    padding:12px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #e5e5e5;
+}
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#2b6ef2;
+}
+.search-box{
+    display:flex;
+    width:45%;
+}
+.search-box input{
+    width:70%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px 0 0 5px;
+}
+.search-box select{
+    padding:10px;
+    border:1px solid #ccc;
+    border-left:none;
+}
+.search-box button{
+    padding:10px 20px;
+    background:#2b6ef2;
+    color:#fff;
+    border:none;
+    border-radius:0 5px 5px 0;
+}
+.header-icons span{
+    margin-left:20px;
+    color:#555;
+    font-size:14px;
+}
+
+/* NAV BAR */
+.nav{
+    background:#fff;
+    padding:10px 40px;
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px solid #e5e5e5;
+}
+.nav-left span{
+    margin-right:20px;
+    font-size:14px;
+    color:#333;
+}
+.nav-right span{
+    margin-left:15px;
+    font-size:14px;
+}
+
+/* MAIN */
+.main{
+    display:flex;
+    padding:20px 40px;
+    gap:20px;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:20%;
+    background:#fff;
+    padding:15px;
+    border-radius:6px;
+}
+.sidebar ul li{
+    list-style:none;
+    padding:10px;
+    font-size:14px;
+    color:#333;
+}
+.sidebar ul li:first-child{
+    background:#eaf1ff;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    width:60%;
+    background:#9fe0c3;
+    border-radius:8px;
+    display:flex;
+    justify-content:space-between;
+    padding:30px;
+}
+.hero h1{
+    font-size:28px;
+    margin-bottom:10px;
+}
+.hero button{
+    padding:10px 18px;
+    border:none;
+    background:#fff;
+    border-radius:4px;
+}
+.hero img{
+    width:200px;
+}
+
+/* RIGHT PANEL */
+.right-panel{
+    width:20%;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+.login-box{
+    background:#eaf1ff;
+    padding:15px;
+    border-radius:6px;
+    text-align:center;
+}
+.login-box button{
+    width:100%;
+    padding:8px;
+    margin-top:8px;
+    border:none;
+    background:#2b6ef2;
+    color:#fff;
+    border-radius:4px;
+}
+.offer{
+    padding:20px;
+    border-radius:6px;
+    color:#fff;
+    font-size:14px;
+}
+.orange{ background:#ff914d; }
+.green{ background:#4bc0c0; }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="top-header">
+    <div class="logo"> <img src="assets/assets/Layout/Brand/logo-colored.png" alt=""></div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        <select>
+            <option>All category</option>
+        </select>
+        <button>Search</button>
+    </div>
+
+    <div class="header-icons">
+        <span>Profile</span>
+        <span>Message</span>
+        <span>Orders</span>
+        <span>My cart</span>
+    </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+    <div class="nav-left">
+        <span>☰ All category</span>
+        <span>Hot offers</span>
+        <span>Gift boxes</span>
+        <span>Projects</span>
+        <span>Menu item</span>
+        <span>Help</span>
+    </div>
+    <div class="nav-right">
+        <span>English, USD</span>
+        <span>Ship to 🇩🇪</span>
+    </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <ul>
+            <li>Automobiles</li>
+            <li>Clothes and wear</li>
+            <li>Home interiors</li>
+            <li>Computer and tech</li>
+            <li>Tools, equipments</li>
+            <li>Sports and outdoor</li>
+            <li>Animals and pets</li>
+            <li>Machinery tools</li>
+            <li>More category</li>
+        </ul>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div>
+            <p>Latest trending</p>
+            <h1>Electronic items</h1>
+            <button>Learn more</button>
+        </div>
+        <img src="assets/assets/Image/backgrounds/Banner-board-800x420 2.png">
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-panel">
+        <div class="login-box">
+            <p>Hi, user<br>let’s get started</p>
+            <button>Join now</button>
+            <p style="margin-top:8px;font-size:13px;">Log in</p>
+        </div>
+
+        <div class="offer orange">
+            Get US $10 off<br>with a new supplier
+        </div>
+
+        <div class="offer green">
+            Send quotes with<br>supplier preferences
+        </div>
+    </div>
+
+</div>
+
+<style>
+.section-wrapper{
+    padding:30px 40px;
+}
+.card-row{
+    display:grid;
+    grid-template-columns:2fr repeat(5,1fr);
+    gap:15px;
+    background:#fff;
+    padding:20px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+.deal-box{
+    border:1px solid #eee;
+    padding:15px;
+}
+.deal-box h3{
+    font-size:16px;
+    margin-bottom:8px;
+}
+.timer{
+    display:flex;
+    gap:6px;
+    margin-top:10px;
+}
+.timer span{
+    background:#555;
+    color:#fff;
+    padding:6px 8px;
+    font-size:12px;
+    border-radius:4px;
+}
+.product{
+    border:1px solid #eee;
+    text-align:center;
+    padding:15px;
+}
+.product img{
+    width:70px;
+    margin-bottom:10px;
+}
+.discount{
+    color:red;
+    font-size:13px;
+}
+
+/* CATEGORY GRID */
+.category-row{
+    display:grid;
+    grid-template-columns:2fr repeat(4,1fr); 
+    
+     /* grid-template-columns: 4fr repeat(4,2fr); */
+    gap:15px;
+    background:#fff;
+    padding:10px ;
+    border-radius:8px;
+    /* margin-left:20px; */
+}
+.category-banner{
+    /* background:#f5efe3; */
+    padding:30px;
+    border-radius:8px;
+    background-image: url("assets/assets/Image/backgrounds/Group\ 969.png");
+    background-position:center ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:300px ;
+   
+   
+    
+  
+
+}
+.catoo{
+    /* padding-left: 30px ; */
+}
+.categorry{
+   
+    background-image: url("assets/assets/Image/backgrounds/image\ 98.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left:35px ;
+}
+.category-banner button{
+    margin-top:15px;
+    padding:8px 14px;
+    border:none;
+    background:#fff;
+}
+.cato{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: right;
+
+    /* margin: 20px; */
+    
+
+}
+
+.cat-item{
+    border:1px solid #eee;
+   
+    width:230px ;
+    height:150px ;
+    padding:20px ;
+   
+}
+.cat-item img{
+    width:70px;
+    padding-left:30px ;
+    float:right;
+    display: flex;
+    flex-direction: row;
+
+}
+.cat-item p{
+    font-size:14px;
+}
+
+/* INQUIRY */
+.inquiry{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    background:linear-gradient(120deg,#2b6ef2,#38b6ff);
+    padding:40px;
+    border-radius:10px;
+    color:#fff;
+    gap:30px;
+    background-image: url("assets/assets/Image/backgrounds/Group\ 982.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.inquiry form{
+    background:#fff;
+    padding:20px;
+    border-radius:8px;
+}
+.inquiry input, .inquiry textarea, .inquiry select{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+}
+.inquiry button{
+    background:#2b6ef2;
+    color:#fff;
+    border:none;
+    padding:10px;
+}
+</style>
+
+<div class="section-wrapper">
+
+<!-- DEALS -->
+<div class="card-row">
+    <div class="deal-box">
+        <h3>Deals and offers</h3>
+        <p>Hygiene equipments</p>
+        <div class="timer">
+            <span>04 Days</span>
+            <span>13 Hour</span>
+            <span>34 Min</span>
+            <span>56 Sec</span>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="assets/assets/Image/tech/8.png">
+        <p>Smart watches</p>
+        <p class="discount">-25%</p>
+    </div>
+    <div class="product">
+        <img src="assets/assets/Image/tech/image 34.png">
+        <p>Laptops</p>
+        <p class="discount">-15%</p>
+    </div>
+    <div class="product">
+        <img src="assets/assets/Image/tech/6.png">
+        <p>GoPro cameras</p>
+        <p class="discount">-40%</p>
+    </div>
+    <div class="product">
+        <img src="assets/assets/Image/tech/image 29.png">
+        <p>Headphones</p>
+        <p class="discount">-25%</p>
+    </div>
+    <div class="product">
+        <img src="assets/assets/Image/tech/image 23.png">
+        <p>Canon cameras</p>
+        <p class="discount">-25%</p>
+    </div>
+</div>
+
+<!-- HOME & OUTDOOR -->
+<div class="category-row">
+    <div class="category-banner">
+        <h3>Home and outdoor</h3>
+        <button>Source now</button>
+    </div>
+<div class="catoo">
+   <div class="cato">
+     <div class="cat-item"><p>Soft chairs<br>From USD 19</p><img src="assets/assets/Image/interior/1.png" alt=""></div>
+     <div class="cat-item"><p>Sofa & chair<br>From USD 19</p> <img src="assets/assets/Image/interior/6.png" alt=""></div>
+    <div class="cat-item"><p>Kitchen dishes<br>From USD 19</p> <img src="assets/assets/Image/interior/image 93.png" alt=""></div>
+    <div class="cat-item"><p>Smart watches<br>From USD 19</p><img src="assets/assets/Image/interior/3.png" alt=""></div>
+</div>
+<div class="cato">
+     <div class="cat-item"><p>Soft chairs<br>From USD 19</p><img src="assets/assets/Image/interior/1.png" alt=""></div>
+     <div class="cat-item"><p>Sofa & chair<br>From USD 19</p> <img src="assets/assets/Image/interior/6.png" alt=""></div>
+    <div class="cat-item"><p>Kitchen dishes<br>From USD 19</p> <img src="assets/assets/Image/interior/image 93.png" alt=""></div>
+    <div class="cat-item"><p>Smart watches<br>From USD 19</p><img src="assets/assets/Image/interior/3.png" alt=""></div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<!-- CONSUMER ELECTRONICS -->
+<div class="category-row">
+    <div class="category-banner categorry">
+        <div class="categorry"></div>
+        <h3>Consumer electronics and gadgets</h3>
+        <button>Source now</button>
+    </div>
+    <div class="catoo">
+<div class="cato">
+    <div class="cat-item"><p>Smart watches<br>From USD 19</p> <img src="assets/assets/Image/interior/9.png" alt=""></div>
+    <div class="cat-item"><p>Cameras<br>From USD 89</p><img src="assets/assets/Image/interior/8.png" alt=""></div>
+    <div class="cat-item"><p>Headphones<br>From USD 10</p><img src="assets/assets/Image/interior/7.png" alt=""></div>
+    <div class="cat-item"><p>Electric kettle<br>From USD 20</p><img src="assets/assets/Image/interior/image 89.png" alt=""></div>
+</div>
+<div class="cato">
+     <div class="cat-item"><p>Smart watches<br>From USD 19</p> <img src="assets/assets/Image/interior/9.png" alt=""></div>
+    <div class="cat-item"><p>Cameras<br>From USD 89</p><img src="assets/assets/Image/interior/8.png" alt=""></div>
+    <div class="cat-item"><p>Headphones<br>From USD 10</p><img src="assets/assets/Image/interior/7.png" alt=""></div>
+    <div class="cat-item"><p>Electric kettle<br>From USD 20</p><img src="assets/assets/Image/interior/image 89.png" alt=""></div>
+    </div>
+</div>
+</div>
+
+<!-- INQUIRY -->
+<div class="inquiry">
+    <div>
+        <h2>An easy way to send requests to all suppliers</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+
+    <form>
+        <input type="text" placeholder="What item you need?">
+        <textarea placeholder="Type more details"></textarea>
+        <select>
+            <option>Quantity</option>
+            <option>Pieces</option>
+        </select>
+        <button>Send inquiry</button>
+    </form>
+</div>
+
+</div>
+
+
+<style>
+.recommend-section{
+    padding:40px;
+    background:#f6f9fc;
+}
+.section-title{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+/* RECOMMENDED ITEMS */
+.recommended-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+.rec-card{
+    background:#fff;
+    padding:15px;
+    border-radius:8px;
+    border:1px solid #eee;
+}
+.rec-card img{
+    width:100%;
+    height:160px;
+    object-fit:contain;
+}
+.rec-card h4{
+    font-size:14px;
+    margin:10px 0 5px;
+}
+.rec-card p{
+    font-size:13px;
+    color:#777;
+}
+.price{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+/* EXTRA SERVICES */
+.services{
+    margin-top:50px;
+}
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+.service-card{
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid #eee;
+}
+.service-card img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+}
+.service-card p{
+    padding:15px;
+    font-size:14px;
+}
+
+/* SUPPLIERS */
+.suppliers{
+    margin-top:50px;
+}
+.suppliers-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+.supplier{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+}
+.flag{
+    width:24px;
+    height:16px;
+    background:#ddd;
+}
+</style>
+
+<div class="recommend-section">
+
+<!-- RECOMMENDED ITEMS -->
+<h2 class="section-title">Recommended items</h2>
+
+<div class="recommended-grid">
+    <div class="rec-card">
+        <img src="assets/assets/Layout/alibaba/Image/cloth/Bitmap.png">
+        <div class="price">$10.30</div>
+        <h4>T-shirts with multiple colors, for men</h4>
+    </div>
+    <div class="rec-card">
+        <img src="assets/assets/Layout/alibaba/Image/cloth/2 1.png">
+        <div class="price">$10.30</div>
+        <h4>Jeans shorts for men blue color</h4>
+    </div>
+    <div class="rec-card">
+        <img src="assets/assets/Layout/alibaba/Image/cloth/image 30.png">
+        <div class="price">$12.50</div>
+        <h4>Brown winter coat medium size</h4>
+    </div>
+    <div class="rec-card">
+        <img src="assets/assets/Layout/alibaba/Image/cloth/image 24.png">
+        <div class="price">$34.00</div>
+        <h4>Jeans bag for travel for men</h4>
+    </div>
+    <div class="rec-card">
+        <img src="assets/assets/Layout/alibaba/Image/cloth/image 26.png">
+        <div class="price">$99.00</div>
+        <h4>Leather wallet</h4>
+    </div>
+
+    <div class="rec-card">
+        <img src="assets/assets/Layout/alibaba/Image/cloth/Bitmap (2).png">
+        <div class="price">$9.99</div>
+        <h4>Cotton canvas black, 100% cotton</h4>
+    </div>
+    <div class="rec-card">
+        <img src="assets/assets/Image/tech/image 86.png">
+        <div class="price">$8.99</div>
+        <h4>Headset for gaming with mic</h4>
+    </div>
+    <div class="rec-card">
+        <img src="assets/assets/Layout/alibaba/Image/cloth/image 26.png">
+        <div class="price">$10.30</div>
+        <h4>Smartwatch silver color modern</h4>
+    </div>
+    <div class="rec-card">
+        <img src="assets/assets/Layout/alibaba/Image/interior/image 90.png">
+        <div class="price">$10.30</div>
+        <h4>Blue wallet for men leather material</h4>
+    </div>
+    <div class="rec-card">
+        <img src="assets/assets/Layout/alibaba/Image/tech/image 85.png">
+        <div class="price">$80.95</div>
+        <h4>Jeans bag for travel for men</h4>
+    </div>
+</div>
+
+<!-- EXTRA SERVICES -->
+<div class="services">
+<h2 class="section-title">Our extra services</h2>
+
+<div class="service-grid">
+    <div class="service-card">
+        <img src="assets/assets/Image/backgrounds/Mask group.png">
+        <p>Source from Industry Hubs</p>
+    </div>
+    <div class="service-card">
+        <img src="assets/assets/Image/backgrounds/Mask group (1).png">
+        <p>Customize Your Products</p>
+    </div>
+    <div class="service-card">
+        <img src="assets/assets/Image/backgrounds/image 106.png">
+        <p>Fast, reliable shipping by ocean or air</p>
+    </div>
+    <div class="service-card">
+        <img src="assets/assets/Image/backgrounds/image 107.png">
+        <p>Product monitoring and inspection</p>
+    </div>
+</div>
+</div>
+
+<!-- SUPPLIERS -->
+<div class="suppliers">
+<h2 class="section-title">Suppliers by region</h2>
+
+<div class="suppliers-grid">
+    <div class="supplier"><div class="flag"><img src="assets/assets/Layout1/Image/flags/AE@2x.png" alt=""></div>Arabic Emirates</div>
+    <div class="supplier"><div class="flag"><img src="assets/assets/Layout1/Image/flags/icon.png" alt=""></div>Australia</div>
+    <div class="supplier"><div class="flag"><img src="assets/assets/Layout1/Image/flags/US@2x.png" alt=""></div>United States</div>
+    <div class="supplier"><div class="flag"><img src="assets/assets/Layout1/Image/flags/RU@2x.png" alt=""></div>Russia</div>
+    <div class="supplier"><div class="flag"><img src="assets/assets/Layout1/Image/flags/IT@2x.png" alt=""></div>Italy</div>
+
+    <div class="supplier"><div class="flag"><img src="assets/assets/Layout1/Image/flags/DK@2x.png" alt=""></div>Denmark</div>
+    <div class="supplier"><div class="flag"><img src="assets/assets/Layout1/Image/flags/FR@2x.png" alt=""></div>France</div>
+    <div class="supplier"><div class="flag"><img src="assets/assets/Layout1/Image/flags/AE@2x.png" alt=""></div>Arabic Emirates</div>
+    <div class="supplier"><div class="flag"><img src="assets/assets/Layout1/Image/flags/CN@2x.png" alt=""></div>China</div>
+    <div class="supplier"><div class="flag"><img src="assets/assets/Layout1/Image/flags/GB@2x.png" alt=""></div>Great Britain</div>
+</div>
+</div>
+
+</div>
+
+
+<style>
+/* NEWSLETTER */
+.newsletter{
+    background:#eef2f5;
+    padding:40px;
+    text-align:center;
+}
+.newsletter h2{
+    font-size:22px;
+    margin-bottom:8px;
+}
+.newsletter p{
+    font-size:14px;
+    color:#666;
+    margin-bottom:20px;
+}
+.newsletter-form{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+.newsletter-form input{
+    width:300px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+.newsletter-form button{
+    padding:10px 20px;
+    background:#2b6ef2;
+    border:none;
+    color:#fff;
+    border-radius:4px;
+}
+
+/* FOOTER */
+.footer{
+    background:#fff;
+    padding:40px;
+}
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr repeat(4,1fr) 1.5fr;
+    gap:30px;
+}
+.footer h4{
+    font-size:15px;
+    margin-bottom:10px;
+}
+.footer p, .footer a{
+    font-size:14px;
+    color:#777;
+    text-decoration:none;
+    display:block;
+    margin-bottom:6px;
+}
+.brand-logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#2b6ef2;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+.social-icons{
+    display:flex;
+  
+    gap:10px;
+    margin-top:10px;
+}
+.social-icons div{
+    width:30px;
+    height:28px;
+    background:#bbbaba;
+    border-radius:70%;
+    padding-top: 5px;
+    color:white ;
+    
+
+
+    
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom{
+    background:#eef2f5;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+    color:#777;
+}
+.language{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+.flag{
+    width:20px;
+    height:14px;
+    background:#ccc;
+    margin-right:10px ;
+}
+.store img{
+    width:120px;
+    margin: bottom 10px;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+    <h2>Subscribe on our newsletter</h2>
+    <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+
+    <div class="newsletter-form">
+        <input type="email" placeholder="Email">
+        <button>Subscribe</button>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <div class="footer-grid">
+
+        <!-- BRAND -->
+        <div>
+            <div class="brand-logo">
+                <div>
+                <!-- style="width:32px;height:32px;background:#2b6ef2;border-radius:6px;"> -->
+                     <img src="assets/assets/Layout/Brand/logo-colored.png" alt=""></div>
+                <!-- Brand -->
+            </div>
+            <p>Best information about the company<br>
+            goes here but now lorem ipsum is</p>
+
+            <div class="social-icons">
+                <div class="fa-brands  fa-facebook-f social"></div><div class="fab fa-twitter"></div><div class="fab fa-linkedin-in"></div><div class="fab fa-instagram"></div><div class="fab fa-youtube"></div>
+            </div>
+        </div>
+
+        <!-- ABOUT -->
+        <div>
+            <h4>About</h4>
+            <a>About Us</a>
+            <a>Find store</a>
+            <a>Categories</a>
+            <a>Blogs</a>
+        </div>
+
+        <!-- PARTNERSHIP -->
+        <div>
+            <h4>Partnership</h4>
+            <a>About Us</a>
+            <a>Find store</a>
+            <a>Categories</a>
+            <a>Blogs</a>
+        </div>
+
+        <!-- INFORMATION -->
+        <div>
+            <h4>Information</h4>
+            <a>Help Center</a>
+            <a>Money Refund</a>
+            <a>Shipping</a>
+            <a>Contact us</a>
+        </div>
+
+        <!-- FOR USERS -->
+        <div>
+            <h4>For users</h4>
+            <a>Login</a>
+            <a>Register</a>
+            <a>Settings</a>
+            <a>My Orders</a>
+        </div>
+
+        <!-- GET APP -->
+        <div class="store">
+            <h4>Get app</h4>
+            <img src="assets/assets/Layout/Misc/Group.png">
+            <img src="assets/assets/Layout/Misc/market-button.png">
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER BOTTOM -->
+<div class="footer-bottom">
+    <div>© 2026 Ecommerce. BY DUA E KHADIJA</div>
+    <div class="language">
+        <div class="flag"><img src="assets/assets/Layout1/Image/flags/US@2x.png" alt=""></div>
+        English
+    </div>
+</div> 
+
+</body>
+</html>
